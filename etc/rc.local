@@ -1,0 +1,23 @@
+#!/bin/sh
+
+#echo "Processing /etc/rc.local"
+
+#echo "get hostname"
+/bin/hostname -F /etc/hostname
+
+#echo "Starting mdev"
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+#echo "ifconfig eth0 1.1.1.2/24"
+ifconfig eth0 1.1.1.2 netmask 255.255.255.0 up
+
+#echo "**************************************************"
+#echo "*                                                *"
+#echo "*        Linux ubuntu 2.6.32-30-generic          *"
+#echo "*                                                *"
+#echo "*           arm-linux-gnueabi-gcc 4.4.5          *"
+#echo "*                                                *"
+#echo "*                 2011-04-04                     *"
+#echo "*                                                *"
+#echo "**************************************************"

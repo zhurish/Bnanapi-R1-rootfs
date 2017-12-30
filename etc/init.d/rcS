@@ -1,0 +1,12 @@
+#!/bin/sh
+#mount -a
+
+#export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+#/bin/hostname sunxi
+
+/bin/mount -a
+
+/sbin/mdev -s
+
+/etc/rc.local
